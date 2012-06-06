@@ -8,30 +8,40 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       2.0.9999
+Version:       2.1
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Command line tools for Eucalyptus and AWS
 
 Group:         Applications/System
 License:       BSD
-URL:           http://open.eucalyptus.com
-# git://github.com/eucalyptus/euca2ools
-Source:        euca2ools-master.tar.gz
+URL:           https://github.com/eucalyptus/euca2ools
+Source:        %{name}-%{version}.tar.gz
 BuildRoot:     %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:     noarch
 
 BuildRequires:  python%{?__python_ver}-devel
+
+# For doc-building
+BuildRequires:  python%{?__python_ver}-boto >= 2.0
+BuildRequires:  help2man
+BuildRequires:  rsync
+BuildRequires:  util-linux
+
 Requires:       python%{?__python_ver}-boto >= 2.1
 Requires:       rsync
 Requires:       util-linux
+
 # %%elseif behaves like %%endif followed by %%if.  Avoid it to reduce confusion.
 %if 0%{?el5}
+BuildRequires:  python%{?__python_ver}-m2crypto >= 0.20.2
 Requires:       python%{?__python_ver}-m2crypto >= 0.20.2
 %endif
 %if 0%{?rhel} > 5 || 0%{?fedora}
+BuildRequires:  m2crypto
 Requires:       m2crypto
 %endif
 %if !0%{?rhel} && !0%{?fedora}
+BuildRequires:  python-m2crypto >= 0.20.2
 Requires:       python-m2crypto >= 0.20.2
 %endif
 
@@ -52,6 +62,8 @@ Eucalyptus.  These tools are also compatible with Amazon AWS.
 
 %build
 %{__python} setup.py build
+export PYTHON=%{__python}
+sh -xe generate-manpages.sh
 
 
 %install
@@ -59,8 +71,9 @@ rm -rf %{buildroot}
 %{__python} setup.py install --prefix=%{_prefix} --skip-build --root %{buildroot}
 %{__python} setup.py install -O1 --prefix=%{_prefix} --skip-build --root %{buildroot}
 
-mkdir -p %{buildroot}/%{_mandir}/man1
-cp -p man/* %{buildroot}/%{_mandir}/man1
+export DESTDIR=%{buildroot}
+export PREFIX=%{_prefix}
+sh -xe install-manpages.sh
 
 
 %clean
@@ -74,6 +87,7 @@ rm -rf %{buildroot}
 %{_bindir}/eustore-*
 %{_mandir}/man1/euca*
 %{_mandir}/man1/euare*
+%{_mandir}/man1/eustore*
 %{python_sitelib}/%{name}-*.egg-info
 %{python_sitelib}/%{name}/
 %doc CHANGELOG
@@ -83,6 +97,10 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue May 22 2012 Eucalyptus Release Engineering <support@eucalyptus.com> - 2.1-0
+- Update to 2.1 pre-releases
+- Generate man pages at build time
+
 * Fri May 11 2012 Eucalyptus Release Engineering <support@eucalyptus.com> - 2.0.999-0
 - Update to post-2.0 mainline
 
