@@ -15,7 +15,7 @@ Summary:       Command line tools for Eucalyptus and AWS
 Group:         Applications/System
 License:       BSD
 URL:           https://github.com/eucalyptus/euca2ools
-Source:        %{name}-%{version}.tar.gz
+Source:        %{name}-%{version}%{?tar_suffix}.tar.gz
 BuildRoot:     %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:     noarch
 
@@ -57,7 +57,7 @@ This package contains the command line tools used to interact with
 Eucalyptus.  These tools are also compatible with Amazon AWS.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{?tar_suffix}
 
 
 %build
