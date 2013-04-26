@@ -8,7 +8,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       2.1.9999
+Version:       2.1.4
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Command line tools for Eucalyptus and AWS
 
@@ -97,6 +97,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Apr 26 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 2.1.4-0
+- Changed to a more sane version
+
 * Wed Jun  6 2012 Eucalyptus Release Engineering <support@eucalyptus.com> - 2.1.9999-0
 - Updated to post-2.1 mainline
 
