@@ -1,60 +1,38 @@
-# Use Python 2.6 on el5
-%if 0%{?el5}
-%global __python_ver 26
-%global __python %{_bindir}/python2.6
-%global __os_install_post %{?__python26_os_install_post}
-%endif
-
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       2.1.4
+Version:       3.0.0
 Release:       0%{?build_id:.%build_id}%{?dist}
-Summary:       Command line tools for Eucalyptus and AWS
+Summary:       Eucalyptus/AWS-compatible command line tools
 
-Group:         Applications/System
+Group:         Applications/Internet
 License:       BSD
-URL:           https://github.com/eucalyptus/euca2ools
-Source:        %{name}-%{version}%{?tar_suffix}.tar.gz
-BuildRoot:     %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-BuildArch:     noarch
+URL:           http://www.eucalyptus.com/
+Source0:       %{name}-%{version}%{?tar_suffix}.tar.gz
 
-BuildRequires:  python%{?__python_ver}-devel
-
-# For doc-building
-BuildRequires:  python%{?__python_ver}-boto >= 2.0
-BuildRequires:  help2man
-BuildRequires:  rsync
-BuildRequires:  util-linux
-
-Requires:       python%{?__python_ver}-boto >= 2.1
+Requires:       python-argparse
+Requires:       python-lxml
+Requires:       python-progressbar >= 2.3
+Requires:       python-requestbuilder >= 0.1.0-0.12.beta2
+Requires:       python-requests
+Requires:       python-setuptools
 Requires:       rsync
 Requires:       util-linux
 
-# %%elseif behaves like %%endif followed by %%if.  Avoid it to reduce confusion.
-%if 0%{?el5}
-BuildRequires:  python%{?__python_ver}-m2crypto >= 0.20.2
-Requires:       python%{?__python_ver}-m2crypto >= 0.20.2
-%endif
-%if 0%{?rhel} > 5 || 0%{?fedora}
-BuildRequires:  m2crypto
-Requires:       m2crypto
-%endif
-%if !0%{?rhel} && !0%{?fedora}
-BuildRequires:  python-m2crypto >= 0.20.2
-Requires:       python-m2crypto >= 0.20.2
-%endif
+BuildRequires:  python-devel
+BuildRequires:  python-setuptools-devel
 
-Obsoletes:      euca2ools-eee < 1.3
+BuildArch:      noarch
+
 
 %description
-EUCALYPTUS is a service overlay that implements elastic computing
-using existing resources. The goal of EUCALYPTUS is to allow sites
-with existing clusters and server infrastructure to co-host an elastic
-computing service that is interface-compatible with Amazon AWS.
+Euca2ools are command line tools used to interact with Amazon Web
+Services (AWS) as well as other services that are compatible with AWS,
+such as Eucalyptus.  They aim to use the same input as similar tools
+provided by AWS for each service individually along with several
+enhancements that make them easier to use against both AWS and
+Eucalyptus.
 
-This package contains the command line tools used to interact with
-Eucalyptus.  These tools are also compatible with Amazon AWS.
 
 %prep
 %setup -q -n %{name}-%{version}%{?tar_suffix}
@@ -62,41 +40,46 @@ Eucalyptus.  These tools are also compatible with Amazon AWS.
 
 %build
 %{__python} setup.py build
-export PYTHON=%{__python}
-sh -xe generate-manpages.sh
 
 
 %install
-rm -rf %{buildroot}
-%{__python} setup.py install --prefix=%{_prefix} --skip-build --root %{buildroot}
-%{__python} setup.py install -O1 --prefix=%{_prefix} --skip-build --root %{buildroot}
+%{__python} setup.py install --skip-build --root %{buildroot}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
-export DESTDIR=%{buildroot}
-export PREFIX=%{_prefix}
-sh -xe install-manpages.sh
-
-
-%clean
-rm -rf %{buildroot}
+mkdir -p %{buildroot}/etc/euca2ools
+cp -p conf/euca2ools.ini %{buildroot}/etc/euca2ools
+mkdir -p %{buildroot}/%{_datadir}/euca2ools/certs
+cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/euare-*
 %{_bindir}/euca-*
+%{_bindir}/eulb-*
+%{_bindir}/euscale-*
 %{_bindir}/eustore-*
-%{_mandir}/man1/euca*
+%{_bindir}/euwatch-*
 %{_mandir}/man1/euare*
+%{_mandir}/man1/euca*
+%{_mandir}/man1/eulb*
+%{_mandir}/man1/euscale*
 %{_mandir}/man1/eustore*
+%{_mandir}/man1/euwatch*
 %{python_sitelib}/%{name}-*.egg-info
 %{python_sitelib}/%{name}/
-%doc CHANGELOG
+%dir /etc/euca2ools
+%config(noreplace) /etc/euca2ools/euca2ools.ini
+%{_datadir}/euca2ools/certs
 %doc COPYING
 %doc INSTALL
 %doc README
 
 
+
 %changelog
+* Thu May 30 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.0-0
+- Updated to 3.0.0
+
 * Fri Apr 26 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 2.1.4-0
 - Changed to a more sane version
 
