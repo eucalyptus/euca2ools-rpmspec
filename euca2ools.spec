@@ -26,12 +26,11 @@ BuildArch:      noarch
 
 
 %description
-Euca2ools are command line tools used to interact with Amazon Web
-Services (AWS) as well as other services that are compatible with AWS,
-such as Eucalyptus.  They aim to use the same input as similar tools
-provided by AWS for each service individually along with several
-enhancements that make them easier to use against both AWS and
-Eucalyptus.
+Euca2ools are command line tools used to interact with Amazon
+Web Services (AWS) as well as other compatible services, such as
+Eucalyptus.  They aim to use the same input as similar tools provided
+by AWS for each service individually along with several enhancements
+that make them easier to use.
 
 
 %prep
