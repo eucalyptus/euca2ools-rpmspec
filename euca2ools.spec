@@ -1,14 +1,14 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.0.1
+Version:       3.0.2
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
 Group:         Applications/Internet
 License:       BSD
 URL:           http://www.eucalyptus.com/
-Source0:       %{name}-%{version}%{?tar_suffix}.tar.gz
+Source0:       %{tarball_basedir}.tar.gz
 
 Requires:       python-argparse
 Requires:       python-lxml
@@ -34,7 +34,7 @@ that make them easier to use.
 
 
 %prep
-%setup -q -n %{name}-%{version}%{?tar_suffix}
+%setup -q -n %{tarball_basedir}
 
 
 %build
@@ -76,6 +76,10 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Sep 30 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.2-0
+- Updated to 3.0.2
+- Make tarball_basedir a single macro rather than assembling it ourselves
+
 * Fri Aug 23 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.1-0
 - Updated to 3.0.1
 
