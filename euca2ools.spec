@@ -56,13 +56,11 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{_bindir}/euca-*
 %{_bindir}/eulb-*
 %{_bindir}/euscale-*
-%{_bindir}/eustore-*
 %{_bindir}/euwatch-*
 %{_mandir}/man1/euare*
 %{_mandir}/man1/euca*
 %{_mandir}/man1/eulb*
 %{_mandir}/man1/euscale*
-%{_mandir}/man1/eustore*
 %{_mandir}/man1/euwatch*
 %{python_sitelib}/%{name}-*.egg-info
 %{python_sitelib}/%{name}/
@@ -76,6 +74,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Feb 24 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Dropped eustore client tools (TOOLS-423)
+
 * Mon Sep 30 2013 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.2-0
 - Updated to 3.0.2
 - Make tarball_basedir a single macro rather than assembling it ourselves
