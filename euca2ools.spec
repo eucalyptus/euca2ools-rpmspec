@@ -1,7 +1,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.0.2
+Version:       3.1.0
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
@@ -13,11 +13,15 @@ Source0:       %{tarball_basedir}.tar.gz
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.1.0-0.12.beta2
+Requires:       python-requestbuilder >= 0.2.0-0.1.pre1
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       rsync
 Requires:       util-linux
+
+# eucalyptus-nc < 4 requires NC-specific commands that were removed in
+# euca2ools 3.1.
+Conflicts:      eucalyptus-nc < 4
 
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools-devel
@@ -74,6 +78,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Wed Mar 19 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Updated for 3.1.0-pre1
+
 * Mon Feb 24 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Dropped eustore client tools (TOOLS-423)
 
