@@ -13,7 +13,7 @@ Source0:       %{tarball_basedir}.tar.gz
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.2.0-0.1.pre1
+Requires:       python-requestbuilder >= 0.2.0-0.4.pre2
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       rsync
@@ -78,6 +78,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Tue Apr  8 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Updated for 3.1.0-pre2
+
 * Wed Mar 19 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Updated for 3.1.0-pre1
 
