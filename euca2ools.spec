@@ -13,7 +13,7 @@ Source0:       %{tarball_basedir}.tar.gz
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.2.0-0.4.pre2
+Requires:       python-requestbuilder >= 0.2.0-0.4.pre3
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       rsync
@@ -58,11 +58,13 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %files
 %{_bindir}/euare-*
 %{_bindir}/euca-*
+%{_bindir}/euform-*
 %{_bindir}/eulb-*
 %{_bindir}/euscale-*
 %{_bindir}/euwatch-*
 %{_mandir}/man1/euare*
 %{_mandir}/man1/euca*
+# TODO:  %{_mandir}/man1/euform*
 %{_mandir}/man1/eulb*
 %{_mandir}/man1/euscale*
 %{_mandir}/man1/euwatch*
@@ -78,6 +80,10 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Tue Apr 17 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Added euform-* commands
+- Updated for 3.1.0-pre3
+
 * Tue Apr  8 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Updated for 3.1.0-pre2
 
