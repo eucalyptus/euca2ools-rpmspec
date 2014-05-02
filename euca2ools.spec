@@ -50,7 +50,7 @@ that make them easier to use.
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
 mkdir -p %{buildroot}/etc/euca2ools
-cp -p conf/euca2ools.ini %{buildroot}/etc/euca2ools
+cp -Rp conf/* %{buildroot}/etc/euca2ools
 mkdir -p %{buildroot}/%{_datadir}/euca2ools/certs
 cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
@@ -72,6 +72,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{python_sitelib}/%{name}/
 %dir /etc/euca2ools
 %config(noreplace) /etc/euca2ools/euca2ools.ini
+%dir /etc/euca2ools/bundle-vol
+%config(noreplace) /etc/euca2ools/bundle-vol/excludes
+%config(noreplace) /etc/euca2ools/bundle-vol/fstab
 %{_datadir}/euca2ools/certs
 %doc COPYING
 %doc INSTALL
@@ -80,6 +83,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Fri May  2 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Added new bundle-vol config files
+
 * Tue Apr 17 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Added euform-* commands
 - Updated for 3.1.0-pre3
