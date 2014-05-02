@@ -24,7 +24,7 @@ Requires:       util-linux
 Conflicts:      eucalyptus-nc < 4
 
 BuildRequires:  python-devel
-BuildRequires:  python-setuptools-devel
+BuildRequires:  python-setuptools
 
 BuildArch:      noarch
 
