@@ -71,10 +71,12 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{python_sitelib}/%{name}-*.egg-info
 %{python_sitelib}/%{name}/
 %dir /etc/euca2ools
-%config(noreplace) /etc/euca2ools/euca2ools.ini
 %dir /etc/euca2ools/bundle-vol
 %config(noreplace) /etc/euca2ools/bundle-vol/excludes
 %config(noreplace) /etc/euca2ools/bundle-vol/fstab
+%dir /etc/euca2ools/conf.d
+%config(noreplace) /etc/euca2ools/euca2ools.ini
+%config(noreplace) /etc/euca2ools/conf.d/*
 %{_datadir}/euca2ools/certs
 %doc COPYING
 %doc INSTALL
@@ -83,6 +85,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon May  5 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Added /etc/euca2ools/conf.d
+
 * Fri May  2 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Added new bundle-vol config files
 
