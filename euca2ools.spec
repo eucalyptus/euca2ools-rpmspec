@@ -8,7 +8,7 @@ Summary:       Eucalyptus/AWS-compatible command line tools
 Group:         Applications/Internet
 License:       BSD
 URL:           http://www.eucalyptus.com/
-Source0:       %{tarball_basedir}.tar.gz
+Source0:       %{tarball_basedir}.tar.xz
 
 Requires:       python-argparse
 Requires:       python-lxml
@@ -86,6 +86,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Tue Jun 17 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
+- Switched to xz-compressed sources
+
 * Wed May 28 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Pull in python-six >= 1.4
 
