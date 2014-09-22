@@ -65,7 +65,7 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{_bindir}/euwatch-*
 %{_mandir}/man1/euare*
 %{_mandir}/man1/euca*
-# TODO:  %{_mandir}/man1/euform*
+%{_mandir}/man1/euform*
 %{_mandir}/man1/eulb*
 %{_mandir}/man1/euscale*
 %{_mandir}/man1/euwatch*
@@ -86,6 +86,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Sep 22 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0
+- Added euform-* man pages
+
 * Tue Jun 17 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Switched to xz-compressed sources
 
