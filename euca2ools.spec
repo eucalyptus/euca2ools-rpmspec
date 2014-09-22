@@ -89,11 +89,17 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 * Mon Sep 22 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0
 - Added euform-* man pages
 
+* Fri Jun 20 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.3-0
+- Switched to xz-compressed sources
+
 * Tue Jun 17 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Switched to xz-compressed sources
 
 * Wed May 28 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Pull in python-six >= 1.4
+
+* Fri May 23 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.3-0
+- Updated to 3.0.3
 
 * Mon May  5 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0-0
 - Added /etc/euca2ools/conf.d
