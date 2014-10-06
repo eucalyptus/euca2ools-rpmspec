@@ -10,6 +10,11 @@ License:       BSD
 URL:           http://www.eucalyptus.com/
 Source0:       %{tarball_basedir}.tar.xz
 
+Requires:       gdisk
+Requires        gzip
+Requires:       kpartx
+Requires:       openssl
+Requires:       parted
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
@@ -86,6 +91,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Oct  6 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.1
+- Added missing deps for euca-bundle-vol (TOOLS-520)
+
 * Mon Sep 22 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.0
 - Added euform-* man pages
 
