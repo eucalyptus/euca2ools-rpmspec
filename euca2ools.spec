@@ -11,7 +11,7 @@ URL:           http://www.eucalyptus.com/
 Source0:       %{tarball_basedir}.tar.xz
 
 Requires:       gdisk
-Requires        gzip
+Requires:       gzip
 Requires:       kpartx
 Requires:       openssl
 Requires:       parted
