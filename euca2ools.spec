@@ -1,7 +1,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.1.0
+Version:       3.1.1
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
@@ -91,6 +91,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Thu Oct 16 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.1
+- Version bump (3.1.1)
+
 * Mon Oct  6 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.1
 - Added missing deps for euca-bundle-vol (TOOLS-520)
 
