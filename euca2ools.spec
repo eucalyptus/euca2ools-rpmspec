@@ -118,7 +118,10 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
-* Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.4.0
+* Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.5
+- Version bump (3.0.5)
+
+* Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.4
 - Version bump (3.0.4)
 
 * Thu Oct 16 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.1
