@@ -93,6 +93,7 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{_bindir}/euare-*
 %{_bindir}/euca-*
 %{_bindir}/euform-*
+%{_bindir}/euimage-*
 %{_bindir}/eulb-*
 %{_bindir}/euscale-*
 %{_bindir}/euwatch-*
