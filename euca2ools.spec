@@ -49,6 +49,7 @@ Requires:       python-requestbuilder >= 0.2.0-0.4.pre3
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       python-six >= 1.4
+Requires:       PyYAML
 Requires:       rsync
 Requires:       util-linux
 
