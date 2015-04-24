@@ -95,12 +95,7 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %{_bindir}/eulb-*
 %{_bindir}/euscale-*
 %{_bindir}/euwatch-*
-%{_mandir}/man1/euare*
-%{_mandir}/man1/euca*
-%{_mandir}/man1/euform*
-%{_mandir}/man1/eulb*
-%{_mandir}/man1/euscale*
-%{_mandir}/man1/euwatch*
+%{_mandir}/*/*
 %{python_sitelib}/%{name}-*.egg-info
 %{python_sitelib}/%{name}/
 %dir /etc/euca2ools
@@ -120,6 +115,7 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 %changelog
 * Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
 - Pull in python-six >= 1.5
+- Added new man pages
 
 * Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.4
 - Version bump (3.0.4)
