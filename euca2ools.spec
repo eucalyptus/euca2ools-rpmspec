@@ -45,7 +45,7 @@ Requires:       parted
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.2.0-0.4.pre3
+Requires:       python-requestbuilder >= 0.3.0
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       python-six >= 1.5
@@ -115,6 +115,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
+- Pull in python-requestbuilder >= 0.3
+
 * Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
 - Pull in python-six >= 1.5
 - Added new man pages
