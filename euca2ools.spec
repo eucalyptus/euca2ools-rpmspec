@@ -1,4 +1,4 @@
-# Copyright 2009-2014 Eucalyptus Systems, Inc.
+# Copyright 2009-2015 Eucalyptus Systems, Inc.
 #
 # Redistribution and use of this software in source and binary forms, with or
 # without modification, are permitted provided that the following conditions
@@ -48,7 +48,7 @@ Requires:       python-progressbar >= 2.3
 Requires:       python-requestbuilder >= 0.2.0-0.4.pre3
 Requires:       python-requests
 Requires:       python-setuptools
-Requires:       python-six >= 1.4
+Requires:       python-six >= 1.5
 Requires:       rsync
 Requires:       util-linux
 
@@ -118,7 +118,10 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
-* Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.4.0
+* Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
+- Pull in python-six >= 1.5
+
+* Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.4
 - Version bump (3.0.4)
 
 * Thu Oct 16 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.1
