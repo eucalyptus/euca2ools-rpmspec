@@ -28,7 +28,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.2.0
+Version:       3.2.1
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
@@ -115,6 +115,12 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Tue Jul 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.1
+- Version bump (3.2.1)
+
+* Tue Jul 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.3
+- Version bump (3.1.3)
+
 * Wed Jul 22 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
 - Pull in python-requestbuilder >= 0.3.4 for TimeoutError
 
@@ -124,6 +130,17 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 * Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
 - Pull in python-six >= 1.5
 - Added new man pages
+
+* Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
+- Pull in python-six >= 1.5
+- Added new man pages
+
+* Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.2
+- Version bump (3.1.2)
+
+* Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.5
+- Version bump (3.0.5)
+>>>>>>> maint-3.2
 
 * Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.2
 - Version bump (3.1.2)
