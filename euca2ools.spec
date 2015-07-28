@@ -113,9 +113,18 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Tue Jul 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.3
+- Version bump (3.1.3)
+
 * Fri Apr 24 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.0
 - Pull in python-six >= 1.5
 - Added new man pages
+
+* Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.2
+- Version bump (3.1.2)
+
+* Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.5
+- Version bump (3.0.5)
 
 * Thu Oct 18 2014 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.4
 - Version bump (3.0.4)
