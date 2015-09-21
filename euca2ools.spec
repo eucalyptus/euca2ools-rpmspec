@@ -45,7 +45,7 @@ Requires:       parted
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.3.4
+Requires:       python-requestbuilder >= 0.4
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       python-six >= 1.5
@@ -115,6 +115,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Sep 21 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.3.0
+- Pull in python-requestbuilder >= 0.4 to fix unsigned redirects (EUCA-11378)
+
 * Sat Aug 15 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.3.0
 - Version bump (3.3.0)
 
