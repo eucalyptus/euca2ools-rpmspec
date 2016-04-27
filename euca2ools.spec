@@ -28,7 +28,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.3.0
+Version:       3.3.1
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
@@ -115,6 +115,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.3.1
+- Version bump (3.3.1)
+
 * Mon Sep 21 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.3.0
 - Pull in python-requestbuilder >= 0.4 to fix unsigned redirects (EUCA-11378)
 
