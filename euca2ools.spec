@@ -113,7 +113,7 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
-* Wed Apr 27 2015 Matt Bacchi <mbacchi@hpe.com> - 3.2.2
+* Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.2.2
 - Version bump (3.2.2)
 
 * Tue Jul 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.2.1
