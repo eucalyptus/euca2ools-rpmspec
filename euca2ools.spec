@@ -1,4 +1,4 @@
-# Copyright 2009-2015 Eucalyptus Systems, Inc.
+# Copyright (c) 2009-2016 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms, with or
 # without modification, are permitted provided that the following conditions
@@ -45,17 +45,13 @@ Requires:       parted
 Requires:       python-argparse
 Requires:       python-lxml
 Requires:       python-progressbar >= 2.3
-Requires:       python-requestbuilder >= 0.4
+Requires:       python-requestbuilder >= 0.6
 Requires:       python-requests
 Requires:       python-setuptools
 Requires:       python-six >= 1.5
 Requires:       PyYAML
 Requires:       rsync
 Requires:       util-linux
-
-# eucalyptus-nc < 4 requires NC-specific commands that were removed in
-# euca2ools 3.1.
-Conflicts:      eucalyptus-nc < 4
 
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
@@ -115,6 +111,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Mon Nov 14 2016 Garrett Holmstrom <gholms@hpe.com> - 3.4.0
+- Bumped python-requstbuilder dependency to 0.6
+
 * Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.3.1
 - Version bump (3.3.1)
 
