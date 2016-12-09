@@ -149,7 +149,6 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 * Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.5
 - Version bump (3.0.5)
->>>>>>> maint-3.2
 
 * Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.2
 - Version bump (3.1.2)
