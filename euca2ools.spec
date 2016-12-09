@@ -48,7 +48,7 @@ Requires:       python-progressbar >= 2.3
 Requires:       python-requestbuilder >= 0.6
 Requires:       python-requests
 Requires:       python-setuptools
-Requires:       python-six >= 1.5
+Requires:       python-six >= 1.8
 Requires:       PyYAML
 Requires:       rsync
 Requires:       util-linux
@@ -111,8 +111,11 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Thu Dec  8 2016 Garrett Holmstrom <gholms@hpe.com> - 3.4.0
+- Bumped python-six dependency to 1.8
+
 * Mon Nov 14 2016 Garrett Holmstrom <gholms@hpe.com> - 3.4.0
-- Bumped python-requstbuilder dependency to 0.6
+- Bumped python-requestbuilder dependency to 0.6
 
 * Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.3.1
 - Version bump (3.3.1)
