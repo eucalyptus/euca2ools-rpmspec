@@ -120,6 +120,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 * Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.3.1
 - Version bump (3.3.1)
 
+* Wed Apr 27 2016 Matt Bacchi <mbacchi@hpe.com> - 3.2.2
+- Version bump (3.2.2)
+
 * Mon Sep 21 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.3.0
 - Pull in python-requestbuilder >= 0.4 to fix unsigned redirects (EUCA-11378)
 
@@ -151,7 +154,6 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 * Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.0.5
 - Version bump (3.0.5)
->>>>>>> maint-3.2
 
 * Wed Jan 28 2015 Eucalyptus Release Engineering <support@eucalyptus.com> - 3.1.2
 - Version bump (3.1.2)
