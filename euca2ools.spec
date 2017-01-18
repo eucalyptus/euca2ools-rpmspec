@@ -28,7 +28,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          euca2ools
-Version:       3.4.0
+Version:       3.4.1
 Release:       0%{?build_id:.%build_id}%{?dist}
 Summary:       Eucalyptus/AWS-compatible command line tools
 
@@ -111,6 +111,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Wed Jan 18 2017 Garrett Holmstrom <gholms@hpe.com> - 3.4.1
+- Version bump (3.4.1)
+
 * Wed Jan 18 2017 Garrett Holmstrom <gholms@hpe.com> - 3.3.3
 - Version bump (3.3.3)
 
