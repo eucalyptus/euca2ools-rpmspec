@@ -1,4 +1,4 @@
-# Copyright (c) 2009-2016 Hewlett Packard Enterprise Development LP
+# Copyright (c) 2009-2017 Hewlett Packard Enterprise Development LP
 #
 # Redistribution and use of this software in source and binary forms, with or
 # without modification, are permitted provided that the following conditions
@@ -111,6 +111,9 @@ cp -p certs/* %{buildroot}/%{_datadir}/euca2ools/certs
 
 
 %changelog
+* Wed Jan 18 2017 Garrett Holmstrom <gholms@hpe.com> - 3.3.3
+- Version bump (3.3.3)
+
 * Tue Dec 13 2016 Garrett Holmstrom <gholms@hpe.com> - 3.4.0
 - Version bump (3.4.0)
 
